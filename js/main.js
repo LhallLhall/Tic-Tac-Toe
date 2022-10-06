@@ -12,30 +12,31 @@ let players = [
     5 // 1
 ]
 function drawBoard(){
+    
     div.classList.add('container')
     
     let nameRow = createAndAddElement(div, 'div', ['row'], '','')
     let nameCol = createAndAddElement(nameRow, 'div', ['col-12', 'text-center'], '','')
     let name = createAndAddElement(nameCol, 'h1',['p-1'], 'name', 'Tic-Tac-Toe')
     let row1 = createAndAddElement(div, 'div', ['row','d-flex', 'justify-content-center', 'align-items-center'], "","")
-    let col0 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-top-0', 'border-dark'],'0','' )
-    let col1 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-dark'],'1','' )
-    let col2 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-end-0', 'border-dark'],'2','' )
-    let col3 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-dark'],'3','' )
-    let col4 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-dark'],'4','' )
-    let col5 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-end-0', 'border-dark'],'5','' )
-    let col6 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-start-0', 'border-dark'],'6','' )
-    let col7 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-dark'],'7','' )
-    let col8 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-end-0', 'border-dark'],'8','' )
-    let button0 = createAndAddElement(col0, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button0','')
-    let button1 = createAndAddElement(col1, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button1','')
-    let button2 = createAndAddElement(col2, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button2','')
-    let button3 = createAndAddElement(col3, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button3','')
-    let button4 = createAndAddElement(col4, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button4','')
-    let button5 = createAndAddElement(col5, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button5','')
-    let button6 = createAndAddElement(col6, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button6','')
-    let button7 = createAndAddElement(col7, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button7','')
-    let button8 = createAndAddElement(col8, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button8','')
+    let col0 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-top-0', 'border-dark'],'col0','' )
+    let col1 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-dark'],'col1','' )
+    let col2 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-end-0', 'border-dark'],'col2','' )
+    let col3 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-dark'],'col3','' )
+    let col4 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-dark'],'col4','' )
+    let col5 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-end-0', 'border-dark'],'col5','' )
+    let col6 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-start-0', 'border-dark'],'col6','' )
+    let col7 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-dark'],'col7','' )
+    let col8 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-end-0', 'border-dark'],'col8','' )
+    // let button0 = createAndAddElement(col0, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button0','')
+    // let button1 = createAndAddElement(col1, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button1','')
+    // let button2 = createAndAddElement(col2, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button2','')
+    // let button3 = createAndAddElement(col3, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button3','')
+    // let button4 = createAndAddElement(col4, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button4','')
+    // let button5 = createAndAddElement(col5, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button5','')
+    // let button6 = createAndAddElement(col6, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button6','')
+    // let button7 = createAndAddElement(col7, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button7','')
+    // let button8 = createAndAddElement(col8, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button8','')
     let buttonRow = createAndAddElement(div, 'div', ['row'], '','')
     let buttonCol = createAndAddElement(buttonRow, 'div', ['col','text-center','p-3'], '','')
     let button = createAndAddElement(buttonCol, 'div', ['btn','btn-primary'], 'button','Reset Game')
@@ -45,10 +46,6 @@ function drawBoard(){
         resetTiles()
         // console.log('state reset')
     })
-    //                     when that button is clicked 
-    //                     set the text content on all the div's to none
-    //                     and reset the state //end game function
-    
 }
 drawBoard()
 
@@ -64,15 +61,15 @@ function resetState(){
 }
 
 function resetTiles(){
-    button0.textContent = ''
-    button1.textContent = ''
-    button2.textContent = ''
-    button3.textContent = ''
-    button4.textContent = ''
-    button5.textContent = ''
-    button6.textContent = ''
-    button7.textContent = ''
-    button8.textContent = ''
+    col0.textContent = ''
+    col1.textContent = ''
+    col2.textContent = ''
+    col3.textContent = ''
+    col4.textContent = ''
+    col5.textContent = ''
+    col6.textContent = ''
+    col7.textContent = ''
+    col8.textContent = ''
 }
 
 function setMarkerAtIndex(index){
@@ -100,21 +97,21 @@ function createAndAddElement(parent, elementType, classes, elementID = '', conte
 }
 
 function addEvents(){
-    button0.addEventListener('click', handleClick);
-    button1.addEventListener('click', handleClick);
-    button2.addEventListener('click', handleClick);
-    button3.addEventListener('click', handleClick);
-    button4.addEventListener('click', handleClick);
-    button5.addEventListener('click', handleClick);
-    button6.addEventListener('click', handleClick);
-    button7.addEventListener('click', handleClick);
-    button8.addEventListener('click', handleClick);
+    col0.addEventListener('click', handleClick);
+    col1.addEventListener('click', handleClick);
+    col2.addEventListener('click', handleClick);
+    col3.addEventListener('click', handleClick);
+    col4.addEventListener('click', handleClick);
+    col5.addEventListener('click', handleClick);
+    col6.addEventListener('click', handleClick);
+    col7.addEventListener('click', handleClick);
+    col8.addEventListener('click', handleClick);
 }
 addEvents()
 
 
 function handleClick (e){
-    let targetId = e.target.id.replace("button", "");
+    let targetId = e.target.id.replace("col", "");
         setMarkerAtIndex(targetId);
         updateTile(e.target);
         checkForWin();
@@ -128,15 +125,15 @@ function removeEvent (e){
 }
 
 function removeAllEvents(){
-    button0.removeEventListener('click', handleClick, false)
-    button1.removeEventListener('click', handleClick, false)
-    button2.removeEventListener('click', handleClick, false)
-    button3.removeEventListener('click', handleClick, false)
-    button4.removeEventListener('click', handleClick, false)
-    button5.removeEventListener('click', handleClick, false)
-    button6.removeEventListener('click', handleClick, false)
-    button7.removeEventListener('click', handleClick, false)
-    button8.removeEventListener('click', handleClick, false)
+    col0.removeEventListener('click', handleClick, false)
+    col1.removeEventListener('click', handleClick, false)
+    col2.removeEventListener('click', handleClick, false)
+    col3.removeEventListener('click', handleClick, false)
+    col4.removeEventListener('click', handleClick, false)
+    col5.removeEventListener('click', handleClick, false)
+    col6.removeEventListener('click', handleClick, false)
+    col7.removeEventListener('click', handleClick, false)
+    col8.removeEventListener('click', handleClick, false)
 }
 
 function updateTile(element){
