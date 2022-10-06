@@ -102,7 +102,7 @@
         totalTurn++
         checkWinCondition()
 
-    If player turn === false
+    Else if player turn === false
 
         set event target id text content = "O"
         set player turn to true
