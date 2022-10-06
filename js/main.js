@@ -11,37 +11,28 @@ let players = [
     1, // 0
     5 // 1
 ]
+
 function drawBoard(){
     
     div.classList.add('container')
-    
+    // div.style = 'height: 100vh;'
     let nameRow = createAndAddElement(div, 'div', ['row'], '','')
     let nameCol = createAndAddElement(nameRow, 'div', ['col-12', 'text-center'], '','')
     let name = createAndAddElement(nameCol, 'h1',['p-1'], 'name', 'Tic-Tac-Toe')
     let row1 = createAndAddElement(div, 'div', ['row','d-flex', 'justify-content-center', 'align-items-center'], "","")
-    let col0 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-top-0', 'border-dark'],'col0','' )
-    let col1 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-dark'],'col1','' )
-    let col2 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-end-0', 'border-dark'],'col2','' )
-    let col3 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-dark'],'col3','' )
-    let col4 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-dark'],'col4','' )
-    let col5 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-end-0', 'border-dark'],'col5','' )
-    let col6 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-start-0', 'border-dark'],'col6','' )
-    let col7 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-dark'],'col7','' )
-    let col8 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-end-0', 'border-dark'],'col8','' )
-    // let button0 = createAndAddElement(col0, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button0','')
-    // let button1 = createAndAddElement(col1, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button1','')
-    // let button2 = createAndAddElement(col2, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button2','')
-    // let button3 = createAndAddElement(col3, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button3','')
-    // let button4 = createAndAddElement(col4, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button4','')
-    // let button5 = createAndAddElement(col5, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button5','')
-    // let button6 = createAndAddElement(col6, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button6','')
-    // let button7 = createAndAddElement(col7, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button7','')
-    // let button8 = createAndAddElement(col8, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button8','')
+    let col0 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-top-0', 'border-dark','btnOpacity'],'col0','' )
+    let col1 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-dark','btnOpacity'],'col1','' )
+    let col2 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-end-0', 'border-dark','btnOpacity'],'col2','' )
+    let col3 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-dark','btnOpacity'],'col3','' )
+    let col4 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-dark','btnOpacity'],'col4','' )
+    let col5 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-end-0', 'border-dark','btnOpacity'],'col5','' )
+    let col6 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-start-0', 'border-dark','btnOpacity'],'col6','' )
+    let col7 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-dark','btnOpacity'],'col7','' )
+    let col8 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-end-0', 'border-dark','btnOpacity'],'col8','' )
     let buttonRow = createAndAddElement(div, 'div', ['row'], '','')
     let buttonCol = createAndAddElement(buttonRow, 'div', ['col','text-center','p-3'], '','')
-    let button = createAndAddElement(buttonCol, 'div', ['btn','btn-primary'], 'button','Reset Game')
+    let button = createAndAddElement(buttonCol, 'div', ['btn','btn-success'], 'button','Reset Game')
     button.addEventListener('click',()=>{
-        // ! add button reset function
         resetState()
         resetTiles()
         // console.log('state reset')
@@ -61,15 +52,15 @@ function resetState(){
 }
 
 function resetTiles(){
-    col0.textContent = ''
-    col1.textContent = ''
-    col2.textContent = ''
-    col3.textContent = ''
-    col4.textContent = ''
-    col5.textContent = ''
-    col6.textContent = ''
-    col7.textContent = ''
-    col8.textContent = ''
+    col0.style.backgroundImage = 'url()'
+    col1.style.backgroundImage = 'url()'
+    col2.style.backgroundImage = 'url()'
+    col3.style.backgroundImage = 'url()'
+    col4.style.backgroundImage = 'url()'
+    col5.style.backgroundImage = 'url()'
+    col6.style.backgroundImage = 'url()'
+    col7.style.backgroundImage = 'url()'
+    col8.style.backgroundImage = 'url()'
 }
 
 function setMarkerAtIndex(index){
@@ -135,15 +126,21 @@ function removeAllEvents(){
     col7.removeEventListener('click', handleClick, false)
     col8.removeEventListener('click', handleClick, false)
 }
-
+// let image = url('https://png.pngtree.com/png-vector/20210222/ourmid/pngtree-glitch-distorted-letter-x-broken-pixel-effect-png-image_2936132.jpg')
 function updateTile(element){
     let boardName = document.getElementById('name')
     if (playerTurn == true){
-        element.textContent = 'X'
-        boardName.textContent = 'Player O Turn'
+        element.style.backgroundImage = 'url(./img/pngegg.png)'
+        element.style.backgroundPosition = 'center'
+        element.style.backgroundSize = '100px'
+        element.style.backgroundRepeat = 'no-repeat'
+        boardName.textContent = 'Tomato Turn'
     } else {
-        element.textContent = "O"
-        boardName.textContent = 'Player X Turn'
+        element.style.backgroundImage = 'url(/img/tomato.png)'
+        element.style.backgroundPosition = 'center'
+        element.style.backgroundSize = '100px'
+        element.style.backgroundRepeat = 'no-repeat'
+        boardName.textContent = 'Potato Turn'
     }
     totalTurn++;
     playerTurn = !playerTurn;
@@ -173,14 +170,14 @@ function checkForWin(){
         console.log(sum);
         if(sum == 3){
             
-            boardName.textContent = 'Player O Wins';
+            boardName.textContent = 'Tomato Wins';
             winner = true;
             removeAllEvents();
         }
         if(sum == 15){
             
             winner = true;
-            boardName.textContent = 'Player X Wins';
+            boardName.textContent = 'Potato Wins';
             removeAllEvents();
         }
         if(totalTurn == 9 && winner === false){
