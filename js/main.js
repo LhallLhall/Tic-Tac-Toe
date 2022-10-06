@@ -2,7 +2,7 @@
 
 let playerTurn = 1; //"x" or "o"
 let gameActive = true;
-let winner = false;
+// let winner = false;
 let totalTurn = 0;
 let boardState = [0,0,0,0,0,0,0,0,0];
 let div = document.getElementById('app')
@@ -18,34 +18,32 @@ function drawBoard(){
     let nameCol = createAndAddElement(nameRow, 'div', ['col-12', 'text-center'], '','')
     let name = createAndAddElement(nameCol, 'h1',['p-1'], 'name', 'Tic-Tac-Toe')
     let row1 = createAndAddElement(div, 'div', ['row','d-flex', 'justify-content-center', 'align-items-center'], "","")
-    // let row2 = createAndAddElement(div, 'div', ['row','d-flex', 'justify-content-center', 'align-items-center'], "","")
-    // let row3 = createAndAddElement(div, 'div', ['row','d-flex', 'justify-content-center', 'align-items-center'], "","")
-    let col0 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border'],'0','' )
-    let col1 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border'],'1','' )
-    let col2 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border'],'2','' )
-    let col3 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border'],'3','' )
-    let col4 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border'],'4','' )
-    let col5 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border'],'5','' )
-    let col6 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border'],'6','' )
-    let col7 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border'],'7','' )
-    let col8 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border'],'8','' )
-    let button0 = createAndAddElement(col0, 'div', ['btn','btn-primary','btn-marker'], 'button0','')
-    let button1 = createAndAddElement(col1, 'div', ['btn','btn-primary','btn-marker'], 'button1','')
-    let button2 = createAndAddElement(col2, 'div', ['btn','btn-primary','btn-marker'], 'button2','')
-    let button3 = createAndAddElement(col3, 'div', ['btn','btn-primary','btn-marker'], 'button3','')
-    let button4 = createAndAddElement(col4, 'div', ['btn','btn-primary','btn-marker'], 'button4','')
-    let button5 = createAndAddElement(col5, 'div', ['btn','btn-primary','btn-marker'], 'button5','')
-    let button6 = createAndAddElement(col6, 'div', ['btn','btn-primary','btn-marker'], 'button6','')
-    let button7 = createAndAddElement(col7, 'div', ['btn','btn-primary','btn-marker'], 'button7','')
-    let button8 = createAndAddElement(col8, 'div', ['btn','btn-primary','btn-marker'], 'button8','')
+    let col0 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-top-0', 'border-dark'],'0','' )
+    let col1 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-dark'],'1','' )
+    let col2 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-end-0', 'border-dark'],'2','' )
+    let col3 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-dark'],'3','' )
+    let col4 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-dark'],'4','' )
+    let col5 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-end-0', 'border-dark'],'5','' )
+    let col6 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-start-0', 'border-dark'],'6','' )
+    let col7 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-dark'],'7','' )
+    let col8 = createAndAddElement(row1, 'div', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-end-0', 'border-dark'],'8','' )
+    let button0 = createAndAddElement(col0, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button0','')
+    let button1 = createAndAddElement(col1, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button1','')
+    let button2 = createAndAddElement(col2, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button2','')
+    let button3 = createAndAddElement(col3, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button3','')
+    let button4 = createAndAddElement(col4, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button4','')
+    let button5 = createAndAddElement(col5, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button5','')
+    let button6 = createAndAddElement(col6, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button6','')
+    let button7 = createAndAddElement(col7, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button7','')
+    let button8 = createAndAddElement(col8, 'div', ['btn','btn-primary','btn-marker','d-flex', 'justify-content-center', 'align-items-center'], 'button8','')
     let buttonRow = createAndAddElement(div, 'div', ['row'], '','')
     let buttonCol = createAndAddElement(buttonRow, 'div', ['col','text-center','p-3'], '','')
-    let button = createAndAddElement(buttonCol, 'div', ['btn','btn-primary'], 'button','reset')
+    let button = createAndAddElement(buttonCol, 'div', ['btn','btn-primary'], 'button','Reset Game')
     button.addEventListener('click',()=>{
         // ! add button reset function
         resetState()
         resetTiles()
-        console.log('state reset')
+        // console.log('state reset')
     })
     //                     when that button is clicked 
     //                     set the text content on all the div's to none
@@ -59,10 +57,12 @@ function resetState(){
     let boardName = document.getElementById('name')
     boardName.textContent = 'Tic-Tac-Toe'
     totalTurn = 0;
-    playerTurn = 0;
+    playerTurn = 1;
     boardState = [0,0,0,0,0,0,0,0,0];
     winner = false;
+    addEvents()
 }
+
 function resetTiles(){
     button0.textContent = ''
     button1.textContent = ''
@@ -79,9 +79,7 @@ function setMarkerAtIndex(index){
     let player = playerTurn ? 1 : 0;
     boardState[index] = players[player];
 }
-
 console.log(boardState)
-
 
 function createAndAddElement(parent, elementType, classes, elementID = '', contents = '', isHTML = false) {
     let el = document.createElement(elementType);
@@ -101,27 +99,44 @@ function createAndAddElement(parent, elementType, classes, elementID = '', conte
     return el;
 }
 
-button0.addEventListener('click', handleClick)
-button1.addEventListener('click', handleClick)
-button2.addEventListener('click', handleClick)
-button3.addEventListener('click', handleClick)
-button4.addEventListener('click', handleClick)
-button5.addEventListener('click', handleClick)
-button6.addEventListener('click', handleClick)
-button7.addEventListener('click', handleClick)
-button8.addEventListener('click', handleClick)
+function addEvents(){
+    button0.addEventListener('click', handleClick);
+    button1.addEventListener('click', handleClick);
+    button2.addEventListener('click', handleClick);
+    button3.addEventListener('click', handleClick);
+    button4.addEventListener('click', handleClick);
+    button5.addEventListener('click', handleClick);
+    button6.addEventListener('click', handleClick);
+    button7.addEventListener('click', handleClick);
+    button8.addEventListener('click', handleClick);
+}
+addEvents()
+
 
 function handleClick (e){
     let targetId = e.target.id.replace("button", "");
-        setMarkerAtIndex(targetId)
+        setMarkerAtIndex(targetId);
         updateTile(e.target);
         checkForWin();
-        console.log(boardState)
-        e.target.removeEventListener('click', handleClick, false)
+        console.log(boardState);
+        removeEvent(e.target)
+        
+    }
 
+function removeEvent (e){
+    e.removeEventListener('click', handleClick, false);
 }
-function test (e){
-    
+
+function removeAllEvents(){
+    button0.removeEventListener('click', handleClick, false)
+    button1.removeEventListener('click', handleClick, false)
+    button2.removeEventListener('click', handleClick, false)
+    button3.removeEventListener('click', handleClick, false)
+    button4.removeEventListener('click', handleClick, false)
+    button5.removeEventListener('click', handleClick, false)
+    button6.removeEventListener('click', handleClick, false)
+    button7.removeEventListener('click', handleClick, false)
+    button8.removeEventListener('click', handleClick, false)
 }
 
 function updateTile(element){
@@ -129,15 +144,17 @@ function updateTile(element){
     if (playerTurn == true){
         element.textContent = 'X'
         boardName.textContent = 'Player O Turn'
+        
         // textContent = "X"  
         // checkWinCondition()
     } else {
         element.textContent = "O"
         boardName.textContent = 'Player X Turn'
+        
         // textContent = "O"
         // checkWinCondition()
     }
-    totalTurn++
+    totalTurn++;
     playerTurn = !playerTurn;
 
 }
@@ -162,18 +179,24 @@ function checkForWin(){
         let currentCondition = winConditions[i];
         // check the indexes at 
         let sum = boardState[currentCondition[0]] + boardState[currentCondition[1]] + boardState[currentCondition[2]];
-        console.log(sum);
+        // console.log(sum);
         if(sum == 3){
-            console.log("X wins")
-            boardName.textContent = 'Player O Wins'
+            // console.log("X wins");
+            boardName.textContent = 'Player O Wins';
+            removeAllEvents();
+            // resetTiles()
         }
         if(sum == 15){
-            console.log("O wins");
-            boardName.textContent = 'Player X Wins'
+            // console.log("O wins");
+            boardName.textContent = 'Player X Wins';
+            // resetTiles()
+            removeAllEvents();
         }
         if(totalTurn == 9){
-            winner = true
-            console.log('GAME OVER')
+            // winner = true;
+            // console.log('GAME OVER');
+            boardName.textContent = 'It\'s a Tie!';
+            removeAllEvents();
         }
     }
 }

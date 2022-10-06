@@ -51,7 +51,7 @@
 - resetState()
     ~~~
     totalTurn = 0
-    playerTurn = true
+    playerTurn = 1
     boardState = ["", "", "", "", "", "", "", ""]
     winner = false
     game active = false
@@ -88,8 +88,7 @@
     ~~~
 - handleClick()
     ~~~
-    if target event id === 0
-        push 
+
     ~~~
 - UpdateTile(e)
     ~~~
@@ -102,7 +101,7 @@
         totalTurn++
         checkWinCondition()
 
-    Else if player turn === false
+    Else
 
         set event target id text content = "O"
         set player turn to true
@@ -111,7 +110,7 @@
         checkWinCondition()
     ~~~
 # Questions
-im not clearly understand how to take the array with 8 spaces and use them to check the win condition
+
 # Procedure
 ~~~
     - init()
@@ -149,8 +148,3 @@ im not clearly understand how to take the array with 8 spaces and use them to ch
     If oArray.length === 2
         displayGameResults() -->
 
-if the state of boardState is = to any of the conditions met in the win condition it will invoke the endGame() function
-how do i do that?
-
-
-when you click the div it puts a 
