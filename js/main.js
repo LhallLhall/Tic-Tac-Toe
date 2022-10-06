@@ -2,7 +2,7 @@
 
 let playerTurn = 1; //"x" or "o"
 let gameActive = true;
-// let winner = false;
+let winner = false;
 let totalTurn = 0;
 let boardState = [0,0,0,0,0,0,0,0,0];
 let div = document.getElementById('app')
@@ -119,7 +119,7 @@ function handleClick (e){
         updateTile(e.target);
         checkForWin();
         console.log(boardState);
-        removeEvent(e.target)
+        removeEvent(e.target);
         
     }
 
@@ -144,15 +144,9 @@ function updateTile(element){
     if (playerTurn == true){
         element.textContent = 'X'
         boardName.textContent = 'Player O Turn'
-        
-        // textContent = "X"  
-        // checkWinCondition()
     } else {
         element.textContent = "O"
         boardName.textContent = 'Player X Turn'
-        
-        // textContent = "O"
-        // checkWinCondition()
     }
     totalTurn++;
     playerTurn = !playerTurn;
@@ -179,22 +173,20 @@ function checkForWin(){
         let currentCondition = winConditions[i];
         // check the indexes at 
         let sum = boardState[currentCondition[0]] + boardState[currentCondition[1]] + boardState[currentCondition[2]];
-        // console.log(sum);
+        console.log(sum);
         if(sum == 3){
-            // console.log("X wins");
+            
             boardName.textContent = 'Player O Wins';
+            winner = true;
             removeAllEvents();
-            // resetTiles()
         }
         if(sum == 15){
-            // console.log("O wins");
+            
+            winner = true;
             boardName.textContent = 'Player X Wins';
-            // resetTiles()
             removeAllEvents();
         }
-        if(totalTurn == 9){
-            // winner = true;
-            // console.log('GAME OVER');
+        if(totalTurn == 9 && winner === false){
             boardName.textContent = 'It\'s a Tie!';
             removeAllEvents();
         }
