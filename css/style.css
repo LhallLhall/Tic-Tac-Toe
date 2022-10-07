@@ -2,3 +2,25 @@
     min-width: 100px;
     min-height: 100px;
 }
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1523349312806-f5dde0a01c32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGdhcmRlbiUyMHNvaWx8ZW58MHx8MHx8&w=1000&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btnOpacity{
+    background-color: rgba(0, 0, 0, 0.469);
+    /* border: 5px solid blue; */
+}
+
+#container2{
+    height: 75vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+/* #app {
+    display: flex;
+    align-items: center;
+} */
