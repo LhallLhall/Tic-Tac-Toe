@@ -12,3 +12,15 @@ body {
     background-color: rgba(0, 0, 0, 0.469);
     /* border: 5px solid blue; */
 }
+
+#container2{
+    height: 75vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+/* #app {
+    display: flex;
+    align-items: center;
+} */
