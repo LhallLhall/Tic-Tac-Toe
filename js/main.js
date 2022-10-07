@@ -1,7 +1,6 @@
 // console.log('hi')
 
 let playerTurn = 1; //"x" or "o"
-let gameActive = true;
 let winner = false;
 let totalTurn = 0;
 let boardState = [0,0,0,0,0,0,0,0,0];
@@ -13,9 +12,7 @@ let players = [
 ]
 
 function drawBoard(){
-    
     div.classList.add('container')
-    // div.style = 'height: 100vh;'
     let nameRow = createAndAddElement(div, 'div', ['row'], '','')
     let nameCol = createAndAddElement(nameRow, 'div', ['col-12', 'text-center'], '','')
     let name = createAndAddElement(nameCol, 'h1',['p-1'], 'name', 'Tic-Tac-Toe')
@@ -35,7 +32,6 @@ function drawBoard(){
     button.addEventListener('click',()=>{
         resetState()
         resetTiles()
-        // console.log('state reset')
     })
 }
 drawBoard()
@@ -126,7 +122,7 @@ function removeAllEvents(){
     col7.removeEventListener('click', handleClick, false)
     col8.removeEventListener('click', handleClick, false)
 }
-// let image = url('https://png.pngtree.com/png-vector/20210222/ourmid/pngtree-glitch-distorted-letter-x-broken-pixel-effect-png-image_2936132.jpg')
+
 function updateTile(element){
     let boardName = document.getElementById('name')
     if (playerTurn == true){

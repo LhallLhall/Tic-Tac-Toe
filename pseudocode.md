@@ -4,8 +4,7 @@
     - game over makes no tiles clickable
 - Display who wins if no one wins say tie
 # State
-- playerTurn: true "x" or "o"
-- gameActive: boolean
+- playerTurn: 1 "x" or "o"
 - winner: boolean
 - totalTurn: 1-9 on 9 return tie
 - players: ???? <!--stretch goals maybe-->
@@ -13,41 +12,59 @@
 # Variables
 
 # Functions
-- checkWinCondition()
+- checkForWin()
     ~~~ 
     if player turn === 9
         replace the "tic-tac-toe" with "it's a tie!"
+    winConditions:
+        Horizontal
+        [0,1,2]
+        [3,4,5]
+        [6,7,8]
 
-    Horizontal
-    [0,1,2]
-    [3,4,5]
-    [6,7,8]
+        Vertical
+        [0,3,6]
+        [1,4,7]
+        [2,5,8]
 
-    Vertical
-    [0,3,6]
-    [1,4,7]
-    [2,5,8]
+        Diagonal
+        [0,4,8]
+        [2,4,6]
 
-    Diagonal
-    [0,4,8]
-    [2,4,6]
+    loop through the winConditions
+        grab the current index of the item inside the array
+            grab the combined numbers of each item inside the array thats inside the array
+                if that combined number === 3
+                    winner = true
+                    set text content to o
+                    removeAllEvents()
 
+                if that combined number === 15
+                    winner = true
+                    text content to X
+                    removeAllEvents()
+
+                if totalTurn is 9 and winner is false
+                    set text content to a tie
+                    removeAllEvents()
    
     ~~~
-- changePlayer() <!--may not need this???-->
-    ~~~
-
-    ~~~
     <!-- still need to figure out how to do the array updated with state -->
-- endGame//displayGameResult()
+- createAndAddElement()
+    - function I ported over from mind reader project
+
+- removeEvent()
     ~~~
-    
+    passes a parameter that grabs the event
+        remove the event listener on the event target
 
     ~~~
-- updateState() <!--maybe not needed-->
-    ~~~
+- removeAllEvents()
+    - removes all of the events on function call
 
-    ~~~
+- addEvents()
+    - adds all of the events on function call
+
 - resetState()
     ~~~
     totalTurn = 0
@@ -56,6 +73,9 @@
     winner = false
     game active = false
     ~~~
+
+
+
 - drawBoard() <!-- will not need this until friday-->
     ~~~
     getElementById('app') //div
@@ -86,20 +106,26 @@
                     and reset the state //end game function
 
     ~~~
+
 - handleClick()
     ~~~
-
+    pass in an event that grabs the event
+     setMarkerAtIndex(targetId)
+     updateTile(e.target)
+     checkForWin()
+     removeEvent()
     ~~~
+
 - UpdateTile(e)
     ~~~
     Have the function take in parameters of the clicked element
 
-    If player turn === true
+    If player turn == true
         set event target id text content = "X"
             set player turn to false
         
         totalTurn++
-        checkWinCondition()
+        
 
     Else
 
@@ -107,7 +133,8 @@
         set player turn to true
         
         totalTurn++
-        checkWinCondition()
+        
+    playerTurn = !playerTurn
     ~~~
 # Questions
 
