@@ -13,10 +13,12 @@ let players = [
 
 function drawBoard(){
     div.classList.add('container')
-    let nameRow = createAndAddElement(div, 'div', ['row'], '','')
+    let nameContainer = createAndAddElement(div, 'div', ['container'], 'nameContainer', '')
+    let nameRow = createAndAddElement(nameContainer, 'div', ['row'], '','')
     let nameCol = createAndAddElement(nameRow, 'div', ['col-12', 'text-center'], '','')
-    let name = createAndAddElement(nameCol, 'h1',['p-1'], 'name', 'Tic-Tac-Toe')
-    let row1 = createAndAddElement(div, 'div', ['row','d-flex', 'justify-content-center', 'align-items-center'], "","")
+    let name = createAndAddElement(nameCol, 'h1',['p-1', 'text-light'], 'name', 'Tic-Tac-Toe')
+    let container2 = createAndAddElement(div, 'div', ['container'], 'container2', '')
+    let row1 = createAndAddElement(container2, 'div', ['row','d-flex', 'justify-content-center', 'align-items-center'], "","")
     let col0 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-start-0', 'border-top-0', 'border-success','btnOpacity','border-3'],'col0','' )
     let col1 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-success','btnOpacity','border-3'],'col1','' )
     let col2 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center', 'border-top-0', 'border-end-0', 'border-success','btnOpacity','border-3'],'col2','' )
@@ -26,8 +28,9 @@ function drawBoard(){
     let col6 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-start-0', 'border-success','btnOpacity','border-3'],'col6','' )
     let col7 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-success','btnOpacity','border-3'],'col7','' )
     let col8 = createAndAddElement(row1, 'button', ['col-4', 'p-5','border','d-flex', 'justify-content-center', 'align-items-center','border-bottom-0', 'border-end-0', 'border-success','btnOpacity','border-3'],'col8','' )
-    let buttonRow = createAndAddElement(div, 'div', ['row'], '','')
-    let buttonCol = createAndAddElement(buttonRow, 'div', ['col','text-center','p-3'], '','')
+    let rowContainer = createAndAddElement(div, 'div', ['container', 'justify-content-center','d-flex','align-items-center'], '', '')
+    let buttonRow = createAndAddElement(rowContainer, 'div', ['row'], '','')
+    let buttonCol = createAndAddElement(buttonRow, 'div', ['col-12','text-center','p-3'], '','')
     let button = createAndAddElement(buttonCol, 'div', ['btn','btn-success'], 'button','Reset Game')
     button.addEventListener('click',()=>{
         resetState()
@@ -106,7 +109,7 @@ function handleClick (e){
         removeEvent(e.target);
         
     }
-
+// could just move this to the function 😓
 function removeEvent (e){
     e.removeEventListener('click', handleClick, false);
 }
